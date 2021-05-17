@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Intents Playground</string>
+    <string name="explicit_intent">Explicit Intent</string>
+    <string name="open_main_activity">OPEN MAIN ACTIVITY</string>
+    <string name="implicit_intent">Implicit Intent</string>
+    <string name="data">Data</string>
+    <string name="open_a_webpage">Open a Webpage</string>
+    <string name="dial_a_number">Dial a Number</string>
+    <string name="share_a_text">Share a Text</string>
+</resources>

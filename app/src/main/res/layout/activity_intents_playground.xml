@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntentsPlayground"
+    tools:ignore="ExtraText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/Explicit"
+        style="Heading5"
+        android:layout_width="310dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/explicit_intent"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/openMainActivity"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#673AB7"
+        android:onClick="OpenMainActivity"
+        android:shadowColor="#9C27B0"
+        android:text="@string/open_main_activity"
+        android:textColorLink="#6E287A"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Explicit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <view
+        android:id="@+id/divider"
+        class="android.view.SurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/openMainActivity" />
+
+
+    <TextView
+        android:id="@id/Implicit"
+        style="Heading5"
+        android:layout_width="310dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/implicit_intent"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="357dp"
+        android:layout_height="66dp"
+        android:hint="@string/data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Implicit"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="visible" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/RadioGrp"
+        android:layout_width="365dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField"
+        tools:ignore="MissingConstraints,UselessLeaf">
+
+        <RadioButton
+            android:id="@id/OpenWebPage"
+            android:layout_width="148dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/open_a_webpage"
+            app:layout_constraintTop_toBottomOf="@+id/data"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="24dp" />
+
+        <RadioButton
+            android:id="@+id/dialNum"
+            android:layout_width="151dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/dial_a_number"
+            app:layout_constraintTop_toBottomOf="@+id/data"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="24dp" />
+
+        <RadioButton
+            android:id="@+id/shareText"
+            android:layout_width="146dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/share_a_text"
+            app:layout_constraintTop_toBottomOf="@+id/data"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="24dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/ImplicitIntentSendBtn"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#673AB7"
+        android:onClick="SendImplicitIntent"
+        android:shadowColor="#9C27B0"
+        android:text="GO"
+        android:textColorLink="#6E287A"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGrp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <view
+        android:id="@+id/divider2"
+        class="android.view.SurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/ImplicitIntentSendBtn" />
+
+    <TextView
+        android:id="@id/SRdata"
+        style="Heading5"
+        android:layout_width="374dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Sending &amp; Receiving data"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/SendData"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="246dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="Initial Count"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SRdata"
+        app:layout_constraintVertical_bias="0.074"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SendData2"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:inputType="number"
+            android:maxLength="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.133"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SRdata" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendDataBtn"
+        android:layout_width="99dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#673AB7"
+        android:onClick="sendData"
+        android:shadowColor="#9C27B0"
+        android:text="SEND"
+        android:textColorLink="#6E287A"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/SendData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toEndOf="@+id/SendData" />
+
+        <TextView
+            android:id="@+id/result"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="26dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SendData" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
